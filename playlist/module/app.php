@@ -1,8 +1,15 @@
 <?php
+// Debuger
+// include("debug.php");
+
 include("config.php");
-include("core.php");
 
-// custom app start here
+// Modules
 
-// --
+// Playlist - Test module
+include("module.playlist.php");
+
+// Login/Logout session
+include("module.login.php");
+
 ?>

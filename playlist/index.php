@@ -1,6 +1,15 @@
-<?php include("module/app.php"); ?>
+<?php 
+include("module/app.php"); 
+?>
 
-<a href="add.php">Add</a>
+<?php if(empty($_SESSION['log'])) {
+    echo "<a href='login.php'>Login</a>";
+} else {
+    echo "<a href='admin/add.php'>Add</a> ";
+    echo "<a href='logout.php?logout'>Logout</a> ";
+    echo $_SESSION['log'];
+} ?>
+
 <table border="1">
     <tr>
         <th>Title</th>
@@ -15,8 +24,10 @@
                 <td><?php echo $obj->album; ?></td>
                 <td>
                     <a href="view.php?v=<?php echo $index; ?>">View</a>
-                    <a href="edit.php?e=<?php echo $index; ?>">Edit</a>
-                    <a href="delete.php?d=<?php echo $index; ?>">Delete</a>
+                    <?php if(!empty($_SESSION['log'])) { ?>
+                        <a href="admin/edit.php?e=<?php echo $index; ?>">Edit</a>
+                        <a href="admin/delete.php?d=<?php echo $index; ?>">Delete</a>
+                    <?php } ?>
                 </td>
             </tr>
         <?php endforeach; ?>

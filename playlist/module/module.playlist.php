@@ -39,7 +39,7 @@ if (isset($_POST["e"])) {
     $all[$module] = array_values($all[$module]);
     file_put_contents($db, json_encode($all));
   }
-  header("Location: index.php");
+  header("Location: ../index.php");
 }
 
 // add
@@ -50,7 +50,7 @@ if (isset($_POST["add"])) {
   $data[$module] = array_values($data[$module]);
   array_push($data[$module], $_POST);
   file_put_contents($db, json_encode($data));
-  header("Location: index.php");
+  header("Location: ../index.php");
 }
 
 // delete
@@ -66,5 +66,5 @@ if (isset($_GET["d"])) {
     $all[$module] = array_values($all[$module]);
     file_put_contents($db, json_encode($all));
   }
-  header("Location: index.php");
+  header("Location: ../index.php");
 }

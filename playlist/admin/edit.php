@@ -1,4 +1,8 @@
-<?php include("module/app.php"); ?>
+<?php include("../module/app.php"); ?>
+
+<?php if(empty($_SESSION['log'])) {
+    header("Location: ../index.php");
+} else { ?>
 
 <?php if (isset($_GET["e"])): ?>
     <form action="edit.php" method="POST">
@@ -8,3 +12,5 @@
         <input type="submit"/>
     </form>
 <?php endif; ?>
+
+<?php } ?>

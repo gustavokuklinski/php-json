@@ -1,13 +1,13 @@
 <?php 
-// Debug
 
-// Json Database file
-$db = "module/db.json";
-
-// Main module on Json file
+// Module Playlist
+$db =  __DIR__ . "/db/db.playlist.json";
 $module = "playlist";
-
-// Json fields
 $dbFields = array("title","album");
+
+// Module Admin
+$dbAdmin = __DIR__ . "/db/db.admin.json";
+$moduleAdmin = "admin";
+$dbFieldsAdmin = array("email","password");
 
 ?>
